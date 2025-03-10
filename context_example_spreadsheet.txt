@@ -1,0 +1,26 @@
+company_name		CNV		(e.g., "CNV")
+company_sector		Vakbond		(e.g., "Vakbond")
+company_info		"CNV is een Nederlandse vakbond die zich inzet voor het belang van werkend Nederland. Hun missie is gericht op het eerlijk verdelen van werk en inkomen in Nederland. Ze bieden verschillende belangrijke diensten aan:
+ 
+ Ondersteuning bij arbeidsrechten
+ Juridische ondersteuning
+ Loopbaanadvies
+ Hulp bij onderhandelingen over arbeidsvoorwaarden
+ Een belangrijk kenmerk van CNV is dat ze actief zijn in veel verschillende sectoren en beroepsgroepen. Hun doelgroep is breed en omvat werknemers uit diverse CAO's en beroepen. De organisatie streeft naar een eerlijke en duurzame samenleving.
+ 
+ CNV werkt continu aan het informeren en ondersteunen van hun leden en potentiële leden. Ze gebruiken moderne technieken en strategieën om hun doelgroep te bereiken, waaronder:
+ 
+ Gepersonaliseerde communicatie
+ Informatieve content over arbeidsrecht en andere relevante onderwerpen
+ Online dienstverlening via hun website
+ Gerichte ondersteuning per sector
+ De organisatie staat bekend om hun professionele aanpak in het behartigen van werknemersbelangen en hun rol in het Nederlandse arbeidsbestel.
+
+
+Belangrijke zoekpatronen om te behouden:
+- Zoektermen met bedrijfsnamen zijn relevant omdat werknemers van deze bedrijven potentiële leden zijn
+- Namen van bedrijven waar vakbondsonderhandelingen mee zijn altijd relevant
+- Bedrijfsnamen alleen uitsluiten bij bewezen irrelevantie via zoekdata
+"		(A longer description of the company/organization)
+competitors		FNV		(Main competitors, comma-separated)
+target_audience		Werknemers die zich (potentieel) aan willen sluiten bij een vakbond, of die vraagstukken hebben waar lidmaatschap bij een vakbond een oplossing voor is		(Description of target audience)
