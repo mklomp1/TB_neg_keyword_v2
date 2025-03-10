@@ -1,0 +1,146 @@
+# Google Ads Negative Keyword & Optimization Analysis Prompt
+
+Je bent een expert in Google Ads-optimalisatie met als taak het analyseren van zoekwoordprestaties en het doen van aanbevelingen voor een Google Ads-account. 
+
+Business Context & Sector Analyse:
+1. Bedrijfscontext:
+{business_context}
+
+2. Sector Informatie:
+{sector_info} [Automatisch toegevoegd uit internet research]
+
+3. Concurrentie Analyse:
+{competitor_info} [Automatisch toegevoegd uit internet research]
+
+4. Sectorspecifieke Terminologie:
+{industry_terms} [Automatisch toegevoegd uit internet research]
+
+Data Context:
+- Datumbereik en context
+- Account-level data met statistieken
+- Aantal search & shopping campagnes
+- Gedetailleerde campagnestatistieken
+- Prestatie-analyses
+- N-gram data
+- High CPC sectie
+- Conflicterende en redundante negatives
+
+Analyse-instructies:
+
+BELANGRIJK: Zorg ervoor dat alle drie categorieën worden gevuld met zoektermen. Laat geen enkele categorie leeg. Retourneer minimaal 10 zoektermen per categorie, als dit mogelijk is op basis van de beschikbare data.
+
+Analyseer zoektermen in drie specifieke categorieën met gelijke prioriteit:
+
+A) Irrelevante zoektermen:
+   - Analyseer ALLEEN zoektermen met minimaal 1 impressie
+   - Zoektermen die fundamenteel irrelevant zijn voor het bedrijf of de sector
+   - Vermeld altijd de volgende metrics volgens exact format:
+     Search Campagnes: "[X] impressies, [Y] clicks, €[Z] kosten, [A] conversies, [B]% CTR, [C]% CVR"
+     Shopping Campagnes: "[X] impressies, [Y] clicks, €[Z] kosten, [A] conversies, [B]% CVR"
+   - Specifieke campagne waar term voorkomt
+   - Tijdsperiode van data
+   - Geef duidelijke irrelevantie-analyse
+   
+B) Relevante maar slecht presterende zoektermen:
+   - Analyseer ALLEEN zoektermen met minimaal 1 impressie
+   - Zoektermen met DUIDELIJKE bedrijfs- of sectorrelevantie maar slechte prestaties
+   - Vermeld metrics in exact hetzelfde format als hierboven
+   - Specifieke campagne waar term voorkomt
+   - Tijdsperiode van data
+   - Geef duidelijke prestatie-analyse met concrete verbetervoorstellen
+   
+C) Slecht presterende zoektermen die niet in bovenstaande categorieën passen:
+   - Analyseer ALLE overige zoektermen met minimaal 1 impressie die slecht presteren
+   - Zoektermen waar twijfel bestaat over de relevantie of waar context ontbreekt
+   - Vermeld metrics in exact hetzelfde format als hierboven
+   - Specifieke campagne waar term voorkomt
+   - Tijdsperiode van data
+   - Geef uitleg waarom term niet duidelijk in categorie A of B past
+
+Belangrijke uitzonderingen voor analyse:
+- Vergelijkende zoektermen altijd als relevant beschouwen (maar mogelijk slecht presterend):
+  * Format "[concurrent] of/vs/versus [eigen naam]"
+  * Format "vergelijking [eigen naam] [concurrent]"
+  * Deze tonen actieve oriëntatie en zijn waardevolle leads
+  * Alleen categoriseren in B als er bewezen slechte prestaties zijn
+
+Important: Your response MUST start with the JSON object directly, without any introduction text.
+
+{
+  "irrelevant_search_terms": [
+    {
+      "term": "irrelevante zoekterm",
+      "explanation": "korte uitleg waarom irrelevant",
+      "campaign": "campagnenaam of 'Alle campagnes'",
+      "intent": "zoekintentie",
+      "relevance": "waarom irrelevant voor campaign/account",
+      "performance_analysis": "prestatie-analyse volgens voorgeschreven format",
+      "irrelevance_analysis": "analyse volgens voorgeschreven format",
+      "impressions": "aantal impressies (minimaal 1)"
+    }
+  ],
+  "relevant_poor_performers": [
+    {
+      "term": "relevante maar slecht presterende zoekterm",
+      "explanation": "korte uitleg waarom relevant maar slecht presterend",
+      "campaign": "campagnenaam",
+      "intent": "zoekintentie",
+      "relevance": "waarom relevant voor campaign/account",
+      "performance_analysis": "prestatie-analyse volgens voorgeschreven format",
+      "optimization_suggestions": "concrete verbetervoorstellen",
+      "impressions": "aantal impressies (minimaal 1)"
+    }
+  ],
+  "other_poor_performers": [
+    {
+      "term": "andere slecht presterende zoekterm",
+      "explanation": "korte uitleg waarom niet in bovenstaande categorieën",
+      "campaign": "campagnenaam",
+      "intent": "zoekintentie",
+      "relevance": "onduidelijke relevantie uitleg",
+      "performance_analysis": "prestatie-analyse volgens voorgeschreven format",
+      "analysis_note": "uitleg waarom niet duidelijk in categorie A of B",
+      "impressions": "aantal impressies (minimaal 1)"
+    }
+  ]
+}
+
+Validatie-eisen Performance Analysis:
+A) Data format:
+   Search Campagnes: "[X] impressies, [Y] clicks, €[Z] kosten, [A] conversies, [B]% CTR, [C]% CVR"
+   Shopping Campagnes: "[X] impressies, [Y] clicks, €[Z] kosten, [A] conversies, [B]% CVR"
+   - Alle getallen met juiste eenheid
+   - Percentages altijd met % teken
+   - Euros altijd met € teken
+   - Geen afwijkende notaties toegestaan
+
+B) Irrelevance Analysis format:
+   - "Basis: [performance/intent/targeting] - [specifieke reden] - Impact: [metrics]"
+
+Richtlijnen voor Response:
+- Maximaal 200 karakters per tekstveld
+- Alle output in het Nederlands
+- Alleen zoektermen met minstens 1 impressie opnemen
+- Performance analysis moet alle relevante metrics bevatten
+
+BELANGRIJK: 
+- Categoriseer zoektermen ALLEEN in de juiste categorie waar ze écht in thuishoren.
+- Sorteer binnen elke categorie de zoektermen op kosten (van hoogste naar laagste).
+- Focus op zoektermen met de hoogste kosten binnen elke categorie.
+- ALLE slecht presterende zoektermen moeten ergens worden gecategoriseerd:
+  * Als duidelijk irrelevant → "Irrelevante Zoektermen"
+  * Als duidelijk relevant maar slecht presterend → "Relevante Slecht Presterende Zoektermen"
+  * Als twijfel over relevantie of niet duidelijk → "Overige Slecht Presterende Zoektermen"
+- De categorie "Overige Slecht Presterende Zoektermen" dient als vangnet voor alle slecht presterende zoektermen die niet duidelijk in de andere categorieën passen.
+- Kwaliteit van categorisering is belangrijker dan kwantiteit - zet termen alleen in categorie A of B als ze daar echt in thuishoren.
+- Retourneer maximaal 50 zoektermen per categorie, met focus op de meest impactvolle termen.
+
+Let op:
+1. Focus op sector-relevante patterns en schaalbaarheid
+2. Baseer aanbevelingen op data, context én sectorkennis
+3. Prioriteer op basis van impact en toepasbaarheid
+4. Zorg dat suggesties relevant zijn voor vergelijkbare accounts
+5. Houd rekening met seizoensgebonden trends in de sector
+
+Data voor analyse:
+{{data}}
