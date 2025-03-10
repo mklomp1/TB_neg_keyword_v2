@@ -16,13 +16,28 @@ A Google Ads script for MCC-level negative keyword management with AI integratio
 ## Files
 
 - `neg_keyword_script_v2.js` - The main Google Ads script
-- `prompt in spreadsheet.txt` - The prompt template used in the spreadsheet for AI analysis
-- `context example spreadsheet.txt` - Example of how context is added in the spreadsheet
+- `neg_keyword_script_v2_fixed.js` - The fixed version of the script with improvements
+- `prompt_in_spreadsheet.txt` - The prompt template used in the spreadsheet for AI analysis
+- `context_example_spreadsheet.txt` - Example of how context is added in the spreadsheet
+
+## Script Versions
+
+### Original Version
+The original script (`neg_keyword_script_v2.js`) provides the core functionality for negative keyword management in Google Ads.
+
+### Fixed Version
+The fixed version (`neg_keyword_script_v2_fixed.js`) includes several improvements:
+- Enhanced JSON normalization for better AI integration
+- Improved error handling
+- Better performance with large datasets
+- Fixed issues with data processing
+
+**Note:** Due to GitHub API limitations, only a placeholder for the fixed script is included in this repository. The complete script (4059 lines) is available upon request.
 
 ## Setup
 
 1. Create a Google Ads script in your MCC account
-2. Copy the contents of `neg_keyword_script_v2.js` into the script
+2. Copy the contents of the script into the script editor
 3. Run the script once to generate a spreadsheet URL
 4. Update the `MY_SHEET` constant in the script with your spreadsheet URL
 5. Configure the settings in the spreadsheet
